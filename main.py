@@ -20,17 +20,20 @@ def adjust_sharpness(imgIn):
     custom = cv2.filter2D(imgIn, -1, kernel)
     return (custom)
 
-
+"""
 ap = argparse.ArgumentParser()
 ap.add_argument("-v", "--video", required=True,
                 help="path to video", )
 args = vars(ap.parse_args())
-
-fps = FPS().start()
+"""
 
 fgbg = cv2.createBackgroundSubtractorMOG2()
 
-vs = cv2.VideoCapture(args["video"])
+# vs = cv2.VideoCapture(args["video"])
+
+vs = cv2.VideoCapture("http://192.168.43.253:8000/eyel.mjpeg")
+
+
 a = 0
 while a != -1:
     a = a + 1
